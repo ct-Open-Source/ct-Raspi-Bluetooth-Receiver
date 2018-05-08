@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# at each BT connection/disconnection start/stop the service bluealsa-aplay
+
+
+BTMAC=${NAME//\"/}
+
+if [ $ACTION = "remove" ]
+then
+        systemctl stop bluealsa-aplay@$BTMAC
+elif [ $ACTION = "add" ]
+then
+        systemctl start bluealsa-aplay@$BTMAC
+fi

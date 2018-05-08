@@ -1,0 +1,13 @@
+[Unit]
+Description=Bluez Simple Agent
+Requires=bluetooth.service bluealsa.service
+After=bluetooth.service bluealsa.service
+
+[Service]
+Type=simple
+User=root
+Group=audio
+ExecStart=/usr/local/bin/simple-agent hci0 & 
+
+[Install]
+WantedBy=multi-user.target

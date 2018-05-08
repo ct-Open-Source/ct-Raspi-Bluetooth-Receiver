@@ -1,0 +1,13 @@
+[Unit]
+Description=BluezALSA APlay %I
+Requires=bluetooth.service bluealsa.service
+After=bluetooth.service bluealsa.service
+
+[Service]
+Type=simple
+User=root
+Group=audio
+ExecStart=/usr/bin/bluealsa-aplay %I
+
+[Install]
+WantedBy=multi-user.target
