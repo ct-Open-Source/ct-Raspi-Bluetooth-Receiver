@@ -7,8 +7,12 @@ BTMAC=${NAME//\"/}
 
 if [ $ACTION = "remove" ]
 then
+        #Aktivieren Sie die folgende Zeile, wenn es zu Störungen beim Audio-Empfang kommt
+        #rfkill unblock wlan
         systemctl stop bluealsa-aplay@$BTMAC
 elif [ $ACTION = "add" ]
 then
+        #Aktivieren Sie die folgende Zeile, wenn es zu Störungen beim Audio-Empfang kommt
+        #rfkill block wlan
         systemctl start bluealsa-aplay@$BTMAC
 fi
