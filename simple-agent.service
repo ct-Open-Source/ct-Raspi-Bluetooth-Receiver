@@ -7,6 +7,7 @@ After=bluetooth.service bluealsa.service
 Type=simple
 User=root
 Group=audio
+ExecStartPre=/bin/sleep 10
 ExecStart=/usr/local/bin/simple-agent hci0 & 
 
 [Install]
